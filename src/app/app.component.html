@@ -1,70 +1,34 @@
-<div class="container">
-  <div class="col">
-    <h1 class="text-center">{{ titulo }}</h1>
-    <br /><br />
-    <form class="row g-3">
-      <div class="form-group col-md-3">
-        <label for="nombre">Nombre:</label>
-        <input
-          type="text"
-          name="nombre"
-          id="nombre"
-          placeholder="Nombre"
-          class="form-control"
-          [(ngModel)]="cuadroNombre"
-        />
-      </div>
-      <div class="form-group col-md-3">
-        <label for="apellido">Apellido:</label>
-        <input
-          type="text"
-          name="apellido"
-          id="apellido"
-          placeholder="Apellido"
-          class="form-control"
-          [(ngModel)]="cuadroApellido"
-        />
-      </div>
-      <div class="form-group col-md-3">
-        <label for="cargo">Cargo:</label>
-        <input
-          type="text"
-          name="cargo"
-          id="cargo"
-          placeholder="Cargo"
-          class="form-control"
-          [(ngModel)]="cuadroCargo"
-        />
-      </div>
-      <div class="form-group col-md-3">
-        <label for="salario">Salario:</label>
-        <input
-          type="text"
-          name="salario"
-          id="salario"
-          placeholder="Salario"
-          class="form-control"
-          [(ngModel)]="cuadroSalario"
-        />
-      </div>
-
-      <div class="form-group col-md-3">
-        <button
-          type="submit"
-          class="btn btn-primary"
-          (click)="agregarEmpleado()"
-        >
-          Agregar Empleado
-        </button>
-      </div>
-    </form>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/proyectos">Proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/quienes">Quiénes Somos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacto">Contacto</a>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>
 
-<br /><br />
-
-<app-empleado-comp-hijo
-  *ngFor="let empleado of empleados; let i = index"
-  [empleadoDeLista]="empleado"
-  [indice]="i"
-></app-empleado-comp-hijo>
+<router-outlet></router-outlet>

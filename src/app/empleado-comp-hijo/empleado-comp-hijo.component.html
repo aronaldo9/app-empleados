@@ -6,6 +6,20 @@
         {{ empleadoDeLista.apellido }}
         {{ empleadoDeLista.cargo }}
         {{ empleadoDeLista.salario }}
+        <a
+          [routerLink]="['/actualiza', indice]"
+          [queryParams]="{ accion: '1' }"
+          class="m-2"
+        >
+          Actualizar Empleado
+        </a>
+
+        <a
+          [routerLink]="['/actualiza', indice]"
+          [queryParams]="{ accion: '2' }"
+        >
+          Eliminar Empleado
+        </a>
       </div>
 
       <ul style="list-style: none">
